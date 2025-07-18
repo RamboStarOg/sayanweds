@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sayan Weds khasis  </title>
+  <title>Sayan Weds Kashes</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
-      color: #fff;
       font-family: 'Segoe UI', sans-serif;
+      color: #fff;
       height: 100vh;
       overflow: hidden;
       position: relative;
@@ -39,6 +39,16 @@
       font-size: 48px;
       font-weight: bold;
       color: #FF3366;
+    }
+
+    /* Blinking effect for names */
+    .blink {
+      animation: blinkAnim 1s infinite;
+    }
+
+    @keyframes blinkAnim {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
     }
 
     .names {
@@ -75,21 +85,58 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
+
+    /* Floating emojis animation */
+    .emoji {
+      position: absolute;
+      font-size: 30px;
+      animation: floatEmoji 6s linear infinite;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        top: 100%;
+        left: calc(10% + 80% * var(--rand));
+        opacity: 0;
+      }
+      20% { opacity: 1; }
+      100% {
+        top: -10%;
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="content">
-    <div class="title">💍 Sayan Weds kashis  💍</div>
-    <div class="names">You are invited to celebrate love, madness, and magic.</div>
+    <div class="title">
+      💍 <span class="blink">Sayan</span> Weds <span class="blink">Kashes</span> 💍
+    </div>
+    <div class="names">You're invited to celebrate their love and madness</div>
     <div class="date">Save the Date: 21st December 2025</div>
   </div>
 
+  <!-- Scrolling Ticker -->
   <div class="ticker">
     <div class="ticker-text">
-      💖 Sayan ❤️ Cashes 💖 f03ked in love 💖 Sayan ❤️ Cashes 💖 Forever and Ever 💖 f03ked in love 💖
+      💖 Sayan ❤️ Kashes 💐 Forever f03ked in love 💍 Happily Ever After 💑 Save the Date 💖
     </div>
   </div>
+
+  <!-- Floating emojis (duplicated for random effect) -->
+  <script>
+    const emojis = ['💍','💐','❤️','💑','🎉','👰','🤵'];
+    for (let i = 0; i < 20; i++) {
+      const e = document.createElement('div');
+      e.className = 'emoji';
+      e.style.setProperty('--rand', Math.random());
+      e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      e.style.left = Math.floor(Math.random() * 100) + '%';
+      e.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(e);
+    }
+  </script>
 
 </body>
 </html>
