@@ -15,7 +15,7 @@
       text-align: center;
     }
 
-    /* Watermark background */
+    /* Watermark */
     body::before {
       content: "f03ked";
       font-size: 160px;
@@ -32,7 +32,7 @@
     .content {
       position: relative;
       z-index: 2;
-      top: 30%;
+      top: 20%;
     }
 
     .title {
@@ -41,7 +41,6 @@
       color: #FF3366;
     }
 
-    /* Blinking effect for names */
     .blink {
       animation: blinkAnim 1s infinite;
     }
@@ -63,7 +62,7 @@
       color: #bbb;
     }
 
-    /* Scrolling ticker at bottom */
+    /* Ticker */
     .ticker {
       position: absolute;
       bottom: 5%;
@@ -86,7 +85,7 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Floating emojis animation */
+    /* Floating emojis */
     .emoji {
       position: absolute;
       font-size: 30px;
@@ -105,10 +104,39 @@
         opacity: 0;
       }
     }
+
+    /* Rocking & flying images */
+    .flying-img {
+      position: absolute;
+      width: 150px;
+      animation: flyUp 10s infinite linear, rock 2s infinite ease-in-out;
+      z-index: 3;
+    }
+
+    .img1 {
+      left: 20%;
+      bottom: 10%;
+    }
+
+    .img2 {
+      right: 20%;
+      bottom: 10%;
+    }
+
+    @keyframes flyUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-200px); }
+    }
+
+    @keyframes rock {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Main Text -->
   <div class="content">
     <div class="title">
       💍 <span class="blink">Sayan</span> Weds <span class="blink">Kashes</span> 💍
@@ -117,14 +145,14 @@
     <div class="date">Save the Date: 21st December 2025</div>
   </div>
 
-  <!-- Scrolling Ticker -->
+  <!-- Ticker -->
   <div class="ticker">
     <div class="ticker-text">
       💖 Sayan ❤️ Kashes 💐 Forever f03ked in love 💍 Happily Ever After 💑 Save the Date 💖
     </div>
   </div>
 
-  <!-- Floating emojis (duplicated for random effect) -->
+  <!-- Floating Emojis -->
   <script>
     const emojis = ['💍','💐','❤️','💑','🎉','👰','🤵'];
     for (let i = 0; i < 20; i++) {
@@ -137,6 +165,10 @@
       document.body.appendChild(e);
     }
   </script>
+
+  <!-- Rocking & Flying Images -->
+  <img src="image1.jpg" alt="Sayan" class="flying-img img1">
+  <img src="image2.jpg" alt="Kashes" class="flying-img img2">
 
 </body>
 </html>
