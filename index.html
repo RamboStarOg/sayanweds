@@ -15,7 +15,7 @@
       text-align: center;
     }
 
-    /* Watermark */
+    /* Background watermark */
     body::before {
       content: "f03ked";
       font-size: 160px;
@@ -25,7 +25,6 @@
       left: 50%;
       transform: translate(-50%, -50%) rotate(-25deg);
       z-index: 0;
-      white-space: nowrap;
       pointer-events: none;
     }
 
@@ -62,7 +61,6 @@
       color: #bbb;
     }
 
-    /* Ticker */
     .ticker {
       position: absolute;
       bottom: 5%;
@@ -85,7 +83,7 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Floating emojis */
+    /* Emojis floating upward */
     .emoji {
       position: absolute;
       font-size: 30px;
@@ -105,38 +103,40 @@
       }
     }
 
-    /* Rocking & flying images */
+    /* Romantic flying images */
     .flying-img {
       position: absolute;
-      width: 150px;
-      animation: flyUp 10s infinite linear, rock 2s infinite ease-in-out;
+      width: 140px;
+      bottom: 12%;
+      animation: flyUp 10s infinite linear, rock 3s infinite ease-in-out;
       z-index: 3;
     }
 
     .img1 {
-      left: 20%;
-      bottom: 10%;
+      left: 47%;
+      transform: rotate(-10deg);
+      transform-origin: right center;
     }
 
     .img2 {
-      right: 20%;
-      bottom: 10%;
+      left: 53%;
+      transform: rotate(10deg);
+      transform-origin: left center;
     }
 
     @keyframes flyUp {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-200px); }
+      0% { transform: translateY(0) rotate(var(--angle)); }
+      100% { transform: translateY(-30px) rotate(var(--angle)); }
     }
 
     @keyframes rock {
-      0%, 100% { transform: rotate(-5deg); }
-      50% { transform: rotate(5deg); }
+      0%, 100% { transform: translateY(0) rotate(var(--angle)); }
+      50% { transform: translateY(-10px) rotate(calc(var(--angle) + 2deg)); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Main Text -->
   <div class="content">
     <div class="title">
       💍 <span class="blink">Sayan</span> Weds <span class="blink">Kashes</span> 💍
@@ -148,11 +148,11 @@
   <!-- Ticker -->
   <div class="ticker">
     <div class="ticker-text">
-      💖 Sayan ❤️ Kashes 💐 Forever f03ked in love 💍 Happily Ever After 💑 Save the Date 💖
+      💖 Sayan ❤️ Kashes 💋 f03ked in love 💍 Happily Ever After 💑 Save the Date 💐💐💐
     </div>
   </div>
 
-  <!-- Floating Emojis -->
+  <!-- Floating Emojis Script -->
   <script>
     const emojis = ['💍','💐','❤️','💑','🎉','👰','🤵'];
     for (let i = 0; i < 20; i++) {
@@ -166,9 +166,9 @@
     }
   </script>
 
-  <!-- Rocking & Flying Images -->
-  <img src="image1.jpg" alt="Sayan" class="flying-img img1">
-  <img src="image2.jpg" alt="Kashes" class="flying-img img2">
+  <!-- Romantic Floating Couple Images -->
+  <img src="image1.jpg" alt="Sayan" class="flying-img img1" style="--angle: -10deg;">
+  <img src="image2.jpg" alt="Kashes" class="flying-img img2" style="--angle: 10deg;">
 
 </body>
 </html>
