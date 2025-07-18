@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sayan Weds khasis  </title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    /* Watermark background */
+    body::before {
+      content: "f03ked";
+      font-size: 160px;
+      color: rgba(255, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      z-index: 0;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      top: 30%;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      color: #FF3366;
+    }
+
+    .names {
+      font-size: 36px;
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    .date {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    /* Scrolling ticker at bottom */
+    .ticker {
+      position: absolute;
+      bottom: 5%;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollLeft 20s linear infinite;
+      font-size: 26px;
+      color: #FF3366;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="title">💍 Sayan Weds kashis  💍</div>
+    <div class="names">You are invited to celebrate love, madness, and magic.</div>
+    <div class="date">Save the Date: 21st December 2025</div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-text">
+      💖 Sayan ❤️ Cashes 💖 f03ked in love 💖 Sayan ❤️ Cashes 💖 Forever and Ever 💖 f03ked in love 💖
+    </div>
+  </div>
+
+</body>
+</html>
